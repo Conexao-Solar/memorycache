@@ -16,11 +16,16 @@ git config --global url."git@github.com:".insteadOf "https://github.com/"
 Declare your storage and create a *NewStorage*
 
 ```bash
-import github.com/Conexao-solar/memorycache
+import (
+	"github.com/Conexao-solar/memorycache/memory"
+	"github.com/Conexao-solar/memorycache"
+)
 
 var storage memorycache.Storage
 
-storage = memory.NewStorage()
+func init() {
+	storage = memory.NewStorage()
+}
 
 ## add itens to storage
 
